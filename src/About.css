@@ -1,0 +1,208 @@
+/* Shared light-yellow background used across impact and team sections */
+:root {
+  --about-yellow-bg: #fffde7;
+  --about-gold:      #c9a000;
+}
+
+/* ── Our Story ────────────────────────────────────────────────────────────────
+   Centered text section on a plain white background.                          */
+.our-story {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+}
+
+/* Gold "Our Story:" heading matching the hand-drawn aesthetic in the reference */
+.story-heading {
+  font-family: 'More Sugar', sans-serif;
+  font-size: 3.25rem;
+  color: var(--about-gold);
+  margin: 0 0 2rem;
+}
+
+.our-story p {
+  color: #333;
+  line-height: 1.9;
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Bottom mission statement rendered in gold italic to set it apart */
+.mission-statement {
+  color: var(--about-gold) !important;
+  font-style: italic;
+  font-weight: 500;
+  border-top: 1px solid #e5e5e5;
+  padding-top: 1.25rem;
+  margin-top: 1.5rem !important;
+}
+
+/* ── Poster Banner ────────────────────────────────────────────────────────────
+   Full-width photo divider between the story and impact sections.             */
+.poster-banner {
+  width: 100%;
+  max-height: 340px;
+  overflow: hidden;
+}
+
+.poster-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Impact section ───────────────────────────────────────────────────────────
+   Section badge image (impact.png) centered above a light-yellow stats row.   */
+.impact-section {
+  background: var(--about-yellow-bg);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* ── Section badge images ─────────────────────────────────────────────────────
+   impact.png and meet_the_team.png act as decorative heading badges.
+   They are centered and sized so they read clearly without overwhelming.      */
+.section-badge {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+}
+
+/* Four stat tiles arranged in a row */
+.stats-grid {
+  display: flex;
+  gap: 5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 100px;
+}
+
+/* Large bold number in gold */
+.stat-value {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--about-gold);
+  line-height: 1;
+}
+
+/* Descriptor label in dark text */
+.stat-label {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+/* ── Team sections ────────────────────────────────────────────────────────────
+   Shared layout for both Meet the Team and Coppell Chapter.                   */
+.team-section {
+  background: var(--about-yellow-bg);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  border-top: 1px solid #f0e08a;
+}
+
+/* CSS-based badge for the "Coppell Chapter" heading.
+   Styled to echo the hand-drawn yellow badge look of the image badges.        */
+.chapter-badge {
+  background: #ffcf3f;
+  color: #1a1a1a;
+  font-family: 'More Sugar', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 0.75rem 2.5rem;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Team grid ────────────────────────────────────────────────────────────────
+   Responsive grid: fills columns automatically, minimum 200px per card.       */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Centered variant — uses auto-fit so empty columns collapse, then centers
+   the remaining cards. Used for the leadership grid (only 3 members).        */
+.team-grid--centered {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
+  justify-content: center;
+}
+
+/* ── Team card ────────────────────────────────────────────────────────────────
+   Rectangular photo with role and name stacked below, centered.               */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  background: #fff;
+}
+
+/* Rectangular portrait, full-width within the card */
+.team-card img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+/* Role title in small muted text, centered */
+.team-role {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+
+/* Member name in bold dark text, centered */
+.team-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+/* ── Circular chapter card variant ───────────────────────────────────────────
+   Applied to Coppell Chapter cards. Crops the photo into a circle focused
+   on the face by using a 1:1 aspect ratio and object-position: top.          */
+.team-card--circular img {
+  width: 180px;
+  height: 180px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-position: top;
+  border: 3px solid #ffcf3f;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────────
+   Collapse stat row and team grid on narrow viewports.                        */
+@media (max-width: 600px) {
+  .stats-grid {
+    gap: 1.5rem;
+  }
+
+  /* Two-column team grid on mobile instead of single column */
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

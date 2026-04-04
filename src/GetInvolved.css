@@ -1,0 +1,79 @@
+/* ── Page layout ──────────────────────────────────────────────────────────────
+   Two-column flex row: badge on the left, text content on the right.
+   Mirrors the layout visible in the reference screenshot.                     */
+.get-involved {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  max-width: 1150px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+}
+
+/* ── Volunteer badge image ────────────────────────────────────────────────────
+   The illustrated "Become a Volunteer" badge from get_involved_images/.       */
+.volunteer-badge {
+  flex-shrink: 0;
+  width: 360px;
+  height: auto;
+}
+
+/* ── Text content column ──────────────────────────────────────────────────────
+   Flowing prose, role list, and form link.                                    */
+.volunteer-content {
+  flex: 1;
+}
+
+.volunteer-content p {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+/* ── Roles list ───────────────────────────────────────────────────────────────
+   Bulleted list of volunteer positions with bold role titles.                 */
+.roles-list {
+  margin: 0 0 1rem 1.25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.roles-list li {
+  color: #333;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* ── Google Form link ─────────────────────────────────────────────────────────
+   Displayed as a standalone gold link matching the reference design.          */
+.form-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: #c9a000;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: underline;
+  word-break: break-all;
+  transition: color 0.15s;
+}
+
+.form-link:hover {
+  color: #a07800;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────────────
+   Stack columns vertically and center the badge on narrow screens.            */
+@media (max-width: 640px) {
+  .get-involved {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem auto;
+  }
+
+  .volunteer-badge {
+    width: 200px;
+  }
+}
