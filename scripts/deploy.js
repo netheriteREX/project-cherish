@@ -19,9 +19,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const dist = path.resolve(__dirname, '../dist')
 const REMOTE = 'https://github.com/netheriteREX/project-cherish.git'
 
+// Preserve the CNAME file so GitHub Pages keeps the custom domain
+import { writeFileSync } from 'fs'
+const CNAME = 'project-cherish.com'
+
 const run = (cmd) => execSync(cmd, { cwd: dist, stdio: 'inherit' })
 
 console.log('Deploying dist/ to gh-pages branch...')
+
+writeFileSync(path.join(dist, 'CNAME'), CNAME)
 
 run('git init')
 run('git add .')
