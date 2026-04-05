@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
+import { HashRouter, Routes, Route, Link, NavLink } from 'react-router-dom'
 import './App.css'
 import Home from './Home'
 import About from './About'
@@ -114,7 +114,7 @@ function Footer() {
 // React Router hooks. Header and Footer are shared across all routes.
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Header />
       <main>
         <Routes>
@@ -126,6 +126,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   )
 }

@@ -138,13 +138,6 @@
   max-width: 1200px;
 }
 
-/* Centered variant — uses auto-fit so empty columns collapse, then centers
-   the remaining cards. Used for the leadership grid (only 3 members).        */
-.team-grid--centered {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 320px));
-  justify-content: center;
-}
-
 /* ── Team card ────────────────────────────────────────────────────────────────
    Rectangular photo with role and name stacked below, centered.               */
 .team-card {
